@@ -204,6 +204,9 @@
         </repository>
     </repositories>
     <build>
+        <finalName>
+            FredBoat
+        </finalName>
         <plugins>
             <!-- force clean all the time-->
             <plugin>
