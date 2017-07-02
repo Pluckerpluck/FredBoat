@@ -38,13 +38,40 @@
         <module>FredBoat-Bootloader</module>
         <module>Orchestrator</module>
         <module>Shared</module>
+        <module>Database</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <spring-boot-version>1.5.4.RELEASE</spring-boot-version>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>jcenter</id>
+            <name>jcenter-bintray</name>
+            <url>http://jcenter.bintray.com</url>
+        </repository>
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>bintray-frederikam-JCA</id>
+            <name>bintray</name>
+            <url>http://dl.bintray.com/frederikam/JCA</url>
+        </repository>
+        <repository>
+            <id>sedmelluq</id>
+            <name>sedmelluq</name>
+            <url>http://maven.sedmelluq.com/</url>
+        </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
 
     <!-- force clean all the time-->
     <build>
