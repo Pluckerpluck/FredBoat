@@ -139,7 +139,7 @@
     </dependencies>
     <build>
         <finalName>
-            FredBoat-${project.version}
+            FredBoat
         </finalName>
         <plugins>
             <plugin>

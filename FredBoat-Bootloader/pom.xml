@@ -41,7 +41,7 @@
 
     <build>
         <finalName>
-            FredBoat-Bootloader-${project.version}
+            FredBoat-Bootloader
         </finalName>
         <plugins>
             <plugin>
