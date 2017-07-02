@@ -1,4 +1,5 @@
 /*
+ *
  * MIT License
  *
  * Copyright (c) 2017 Frederik Ar. Mikkelsen
@@ -20,15 +21,29 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- *
  */
 
-package com.frederikam.fredboat.bootloader;
+package fredboat.shared.constant;
 
-public class ExitCodes {
-    
-    public static final int EXIT_CODE_NORMAL = 0;
-    public static final int EXIT_CODE_UPDATE = 20;
-    public static final int EXIT_CODE_RESTART = 21;
-    
+public enum DistributionEnum {
+    MAIN("production", false),
+    MUSIC("music", false),
+    DEVELOPMENT("beta", true),
+    PATRON("patron", true);
+
+    private final String id;
+    private final boolean volumeSupported;
+
+    DistributionEnum(String id, boolean volumeSupported) {
+        this.id = id;
+        this.volumeSupported = volumeSupported;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public boolean volumeSupported() {
+        return volumeSupported;
+    }
 }

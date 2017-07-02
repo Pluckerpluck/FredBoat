@@ -46,7 +46,7 @@ import fredboat.event.EventListenerBoat;
 import fredboat.event.EventListenerSelf;
 import fredboat.event.ShardWatchdogListener;
 import fredboat.feature.I18n;
-import fredboat.util.constant.DistributionEnum;
+import fredboat.shared.constant.DistributionEnum;
 import fredboat.util.log.SimpleLogToSLF4JAdapter;
 import frederikam.jca.JCA;
 import frederikam.jca.JCABuilder;

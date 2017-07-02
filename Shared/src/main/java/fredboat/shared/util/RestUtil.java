@@ -1,4 +1,5 @@
 /*
+ *
  * MIT License
  *
  * Copyright (c) 2017 Frederik Ar. Mikkelsen
@@ -20,24 +21,28 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- *
  */
 
-package fredboat.util.constant;
+package fredboat.shared.util;
 
-import java.awt.*;
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
 
-public class BotConstants {
+/**
+ * Created by napster on 01.07.17.
+ */
+public class RestUtil {
 
-    public static final String MUSIC_BOT_ID = "184405311681986560";
-    public static final String BETA_BOT_ID = "152691313123393536";
-    public static final String MAIN_BOT_ID = "150376112944447488";
-    public static final String PATRON_BOT_ID = "241950106125860865";
-
-    public static final String FREDBOAT_HANGOUT_ID = "174820236481134592";
-    public static final Color FREDBOAT_COLOR = new Color(28, 191, 226);
-
-    private BotConstants() {
+    public static String hashUrlSafe(String input) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            md.update(input.getBytes("UTF-8"));
+            byte[] digest = md.digest();
+            return Base64.getUrlEncoder().encodeToString(digest);
+        } catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
+            throw new RuntimeException(e);
+        }
     }
-
 }
